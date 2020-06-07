@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service # Service to connect scylla db pods. No change required unless you want to give a different name and labels.
+metadata:
+  labels:
+    app: scylla
+  name: scylla
+spec:
+  clusterIP: None
+  ports:
+    - port: 9042
+  selector:
+    app: scylla # Make sure the app selector is similar to the one in stateful set.
